@@ -4,6 +4,7 @@ if(config.alias){const target=new URL(config.alias,location.href);target.search=
 const media=matchMedia('(max-width:700px)');
 const layout=media.matches?'mobile':'desktop';
 if(config.rendered){
+ if(config.rendered!==layout){location.reload();return;}
  media.addEventListener('change',()=>location.reload());
  const scrollToHash=()=>{if(location.hash){let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}document.getElementById(id)?.scrollIntoView();}};
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',scrollToHash,{once:true});else scrollToHash();
