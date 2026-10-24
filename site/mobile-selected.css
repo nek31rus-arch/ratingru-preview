@@ -1,0 +1,45 @@
+@media(max-width:700px){
+/* B: a compact editorial route. The ring belongs to the headline. */
+ .mobile-selected .hero-copy h1{font-size:31px;line-height:1.32;margin:0;max-width:none}
+.mobile-selected .mobile-hero-composition{display:grid;grid-template-columns:minmax(0,1fr) 116px;gap:8px;align-items:center;margin:24px 0}
+.mobile-selected .hero-metal.chosen-dossier{border:0;box-shadow:none;background:none;overflow:visible;border-radius:0;isolation:auto;min-width:0;padding:0}
+.mobile-selected .hero-metal:before{content:none}
+.mobile-selected .hero-metal .rating-widget{--ring-size:112px!important}
+.mobile-selected .hero-metal .rating-label{font-size:10px;color:var(--muted);margin-bottom:15px;text-align:center}
+.mobile-selected .hero-lead{font-size:15px}
+.mobile-selected .hero-search{margin-top:22px}
+.mobile-selected .hero-grid{gap:25px}
+.mobile-selected #dossier-slot .dossier-score-grid{display:block}
+.mobile-selected #dossier-slot .dossier-copy h2{font:600 21px/1.4 Golos,sans-serif}
+.mobile-selected #dossier-slot .dossier-copy h2 br{display:none}
+.mobile-selected #dossier-slot .dossier-copy p{font-size:13px;max-width:280px}
+.mobile-selected #dossier-slot .dossier-ledger{margin-top:18px}
+.mobile-selected .hero-baseline{margin-top:25px}
+.mobile-selected .chosen-cities.city-v2{padding-block:47px}
+.mobile-selected .chosen-cities.city-v2 .landmark-card{display:grid;grid-template-columns:106px minmax(0,1fr);gap:0 17px;padding:19px 17px;border-radius:8px}
+.mobile-selected .chosen-cities .city-card-cap{grid-column:1/-1;font-size:9px;margin-bottom:11px}
+.mobile-selected .chosen-cities.city-v2 .city-picture{grid-column:1;grid-row:2/5;margin:0;display:flex;align-items:center}
+.mobile-selected .chosen-cities.city-v2 .city-landmark{height:auto;max-height:100px;width:100%}
+.mobile-selected .chosen-cities .city-card-title{grid-column:2;align-self:end}
+.mobile-selected .chosen-cities.city-v2 .city-card-title h3{font:600 18px/1.5 Golos,sans-serif;letter-spacing:-.03em}
+.mobile-selected .chosen-cities .city-landmark-caption{grid-column:2;font-size:10px;margin-top:6px;line-height:1.8}
+.mobile-selected .chosen-cities .city-card-bottom{grid-column:2;border:0;margin:8px 0 0;padding:0;font-size:11px;min-height:35px;gap:6px}
+.mobile-selected .chosen-cities .city-arrow{width:18px}
+.mobile-selected .mobile-faq summary{padding-inline:0}
+.mobile-selected .mobile-faq details[open] summary{padding-inline:10px}
+.mobile-selected .mobile-answer{padding:19px 20px 24px}
+.mobile-selected .mobile-answer p{font-size:14px}
+.mobile-selected .hero-copy h1{font-size:28px}
+.mobile-selected .mobile-hero-composition{grid-template-columns:minmax(0,1fr) 107px;gap:7px}
+.mobile-selected .hero-metal .rating-widget{--ring-size:103px!important}
+.mobile-selected .chosen-cities.city-v2 .city-card-title h3{font-size:17px}
+}
+/* The chosen page is assembled from the exact A/B blocks shown by the owner. */
+@media(max-width:700px){
+.mobile-selected .hero-copy h1{font-size:31px}.mobile-selected .hero{padding-bottom:32px}.mobile-selected .hero-grid{gap:29px}.mobile-selected .score-with-study{display:flex;flex-direction:column;justify-content:center;gap:23px;height:100%;padding:24px 20px 27px}.mobile-selected .score-with-study .dossier-copy h2{font:600 22px/1.4 Golos,sans-serif;letter-spacing:-.025em}.mobile-selected .score-with-study .dossier-copy p{font-size:13px;line-height:1.8;max-width:none;margin-top:10px}.mobile-selected .score-with-study .dossier-kicker{font-size:8px;color:#a9c6ea;margin-bottom:8px;display:block}.mobile-selected .score-with-study .dossier-copy h2 br{display:none}.mobile-selected .hero-metal .rating-label{font-size:10px}.mobile-selected .chosen-cities.city-v2 .city-landmark{height:auto;max-height:110px}.mobile-selected .chosen-cities.city-v2 .landmark-card{padding:22px 20px;gap:0 22px;grid-template-columns:112px minmax(0,1fr)}
+.evidence-study{min-width:0;width:100%;animation:study-enter .6s ease both}.evidence-drawing{display:block;width:100%;height:111px;stroke:#82a9d5;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;overflow:visible}.evidence-drawing g{transition:stroke .3s,fill .3s;fill:#8baee205}.evidence-study[data-active=conditions] [data-map=conditions],.evidence-study[data-active=reviews] [data-map=reviews],.evidence-study[data-active=checks] [data-map=checks]{stroke:#f28593;fill:#ec78870b}.evidence-drawing .map-link{stroke:#6d91bc;stroke-width:1;stroke-dasharray:3 4}.evidence-switches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid #ffffff1c;margin-top:0}.evidence-switches button{position:relative;border:0;background:none;padding:12px 2px;font:500 12px/1.4 Golos,sans-serif;min-height:44px;color:#abc1df;transition:color .2s}.evidence-switches button[aria-pressed=true]{color:#fff}.evidence-switches button[aria-pressed=true]:after{content:'';position:absolute;left:18%;right:18%;bottom:-1px;height:2px;background:#ef7888}.evidence-switches button:focus-visible{outline:2px solid #ef7888;outline-offset:-2px}.evidence-study .evidence-note{margin:11px 0 0;font-size:11px;line-height:1.75;min-height:39px;color:#b4c8e2;max-width:300px}.evidence-number{display:flex;align-items:center;justify-content:center;gap:25px;height:125px}.evidence-number>strong{font:600 109px/1 Unbounded,sans-serif;letter-spacing:-.09em;color:#f07683;text-shadow:0 3px 0 #c2455533;animation:study-number .7s ease both}.evidence-number>div>span{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#a6c3e6;margin-bottom:8px}.evidence-number b{font:550 23px/1.25 Golos,sans-serif;letter-spacing:-.02em}.evidence-number svg{width:105px;height:20px;display:block;stroke:#779dcc;stroke-width:1;margin-top:11px}.evidence-number circle{fill:#f07683;stroke:none}.evidence-study-2 .evidence-switches{margin-top:9px}
+}
+@media(max-width:374px){.mobile-selected .hero-copy h1{font-size:28px}.mobile-selected .mobile-hero-composition{grid-template-columns:minmax(0,1fr) 107px;gap:7px}.mobile-selected .hero-metal .rating-widget{--ring-size:103px!important}.mobile-selected .chosen-cities.city-v2 .landmark-card{grid-template-columns:100px minmax(0,1fr);gap:0 17px;padding:20px 17px}}
+@keyframes study-enter{from{opacity:.3;transform:translateY(7px)}to{opacity:1;transform:none}}@keyframes study-number{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.evidence-study,.evidence-number>strong{animation:none}.evidence-drawing g,.evidence-switches button{transition:none}}
+@media(max-width:700px){.mobile-selected .dossier-panels>.dossier-measure.score-with-study{display:flex!important;flex-direction:column;gap:23px;padding:24px 20px 27px}.mobile-selected .score-with-study>.evidence-study,.mobile-selected .score-with-study>.dossier-copy{flex-shrink:0}}

@@ -1,0 +1,1 @@
+(()=>{'use strict';const page=document.currentScript?.dataset.page;if(!matchMedia('(max-width:700px)').matches)return;const target={home:'home.html',catalog:'catalog-mobile.html',article:'article-mobile.html'}[page];if(!target)return;const url=new URL(target,location.href);url.search=location.search;url.hash=location.hash;location.replace(url.href)})();

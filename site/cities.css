@@ -1,0 +1,81 @@
+.chosen-cities{padding:90px 0 80px;--city-ink:#2869D0;--city-surface:#ECF2FB;background:#fff}
+.chosen-cities .cities-heading{display:flex;justify-content:space-between;gap:42px;align-items:flex-end;margin-bottom:43px}
+.chosen-cities .cities-kicker{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2869D0;display:flex;align-items:center;gap:12px;margin-bottom:19px}
+.chosen-cities .cities-kicker>span{font-size:10px;width:29px;height:29px;display:grid;place-items:center;border:1px solid #D9E3F0;border-radius:50%;letter-spacing:0}
+.chosen-cities .cities-heading h2{font-size:clamp(28px,3vw,42px);line-height:1.3;letter-spacing:-.045em}
+.chosen-cities .cities-intro{font-size:16px;line-height:1.8;max-width:390px;margin-bottom:4px}
+.chosen-cities .cities-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
+.chosen-cities .landmark-card{min-width:0;position:relative;display:block;color:#132743;background:#fff;border:1px solid #D9E3F0;border-radius:14px;padding:24px 26px 23px;overflow:hidden;transition:transform .3s,border-color .3s,box-shadow .3s}
+.chosen-cities .landmark-card:hover{transform:translateY(-5px);border-color:#2869D055;box-shadow:0 17px 30px #13274308}
+.chosen-cities .city-card-cap{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#5B6E86;font-size:10px;letter-spacing:.085em;text-transform:uppercase}
+.chosen-cities .city-card-code{color:#2869D0;font-size:10px;letter-spacing:.04em}
+.chosen-cities .city-picture{position:relative;margin:23px -8px 17px;color:var(--city-ink)}
+.chosen-cities .city-landmark{display:block;width:100%;height:auto;max-height:225px;overflow:visible}
+.chosen-cities .landmark-main{stroke:var(--city-ink)}
+.chosen-cities .landmark-soft{opacity:.35}
+.chosen-cities .landmark-red-fill{fill:#D73B4A16;stroke:#D73B4A}
+.chosen-cities .landmark-blue-fill{fill:#2869D012;stroke:#2869D0}
+.chosen-cities .landmark-detail{opacity:.65}
+.chosen-cities .city-horizon{stroke:#BCCDDD;stroke-width:1.35}
+.chosen-cities .city-water{stroke:#2869D055;stroke-width:1.2}
+.chosen-cities .city-card-title{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.chosen-cities .city-card-title h3{font-family:Unbounded,Golos,sans-serif;font-size:clamp(19px,1.6vw,24px);line-height:1.45;letter-spacing:-.045em;overflow-wrap:normal}
+.chosen-cities .city-landmark-caption{font-size:10px;line-height:1.7;margin-top:8px;color:#748399}
+.chosen-cities .city-card-bottom{border-top:1px solid #D9E3F0;display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:25px;padding-top:16px;font-size:12px;color:#5B6E86}
+.chosen-cities .city-arrow{width:22px;height:22px;flex:none;transition:transform .25s;color:#2869D0}
+.chosen-cities .landmark-card:hover .city-arrow{transform:translateX(4px)}
+.chosen-cities .cities-tail{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:30px}
+.chosen-cities .cities-tail>p{font-size:11px;line-height:1.7}
+.chosen-cities .cities-tail button{border:0;background:none;padding:8px 0;display:flex;align-items:center;gap:10px;font-size:13px;color:#2869D0;font-weight:550}
+.chosen-cities .cities-tail button>svg{width:19px;height:19px;flex:none}
+.chosen-cities .cities-tail button:hover span{text-decoration:underline;text-decoration-color:#D73B4A88;text-underline-offset:5px}
+.chosen-cities.city-v1 .landmark-moscow{--city-ink:#B65A68}
+.chosen-cities.city-v1 .landmark-spb{--city-ink:#547FB9}
+.chosen-cities.city-v1 .landmark-kazan{--city-ink:#527199}
+.chosen-cities.city-v1 .city-picture:before{content:'';position:absolute;inset:7% 16% 8%;background:#ECF2FB55;border-radius:50%;z-index:0}
+.chosen-cities.city-v1 .city-landmark{position:relative}
+/* Pastel posters: centered titles, larger landmarks, soft surfaces without new brand colors. */
+.chosen-cities.city-v2{background:#FFFAFB}
+.chosen-cities.city-v2 .cities-heading{display:block;text-align:center;margin-bottom:43px}
+.chosen-cities.city-v2 .cities-kicker{justify-content:center}
+.chosen-cities.city-v2 .cities-intro{max-width:640px;margin:22px auto 0}
+.chosen-cities.city-v2 .landmark-card{border-radius:20px;border-color:transparent;padding:25px 25px 23px;background:#FCEDEF;--city-ink:#AE6470}
+.chosen-cities.city-v2 .landmark-spb{background:#ECF2FB;--city-ink:#6488BA}
+.chosen-cities.city-v2 .landmark-kazan{background:#F4F6FA;--city-ink:#627B9C}
+.chosen-cities.city-v2 .city-card-code{font-size:11px;color:var(--city-ink)}
+.chosen-cities.city-v2 .city-card-cap{color:var(--city-ink)}
+.chosen-cities.city-v2 .city-picture{margin:24px -10px 15px}
+.chosen-cities.city-v2 .city-landmark{max-height:255px}
+.chosen-cities.city-v2 .city-card-title h3{font-size:clamp(19px,1.65vw,25px)}
+.chosen-cities.city-v2 .city-landmark-caption{color:#64758C}
+.chosen-cities.city-v2 .city-card-bottom{border-color:#13274313}
+.chosen-cities.city-v2 .landmark-blue-fill{fill:#2869D019}
+.chosen-cities.city-v2 .landmark-red-fill{fill:#D73B4A1B}
+.chosen-cities.city-v2 .cities-tail{justify-content:center}
+.chosen-cities.city-v2 .cities-tail>p{display:none}
+/* Editorial atlas: left title column and three slim museum-label tiles. */
+.chosen-cities.city-v3>.wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:0 38px}
+.chosen-cities.city-v3 .cities-heading{display:block;margin:0;align-self:center}
+.chosen-cities.city-v3 .cities-heading h2{font-size:31px;line-height:1.4}
+.chosen-cities.city-v3 .cities-intro{font-size:14px;line-height:1.9;margin-top:21px;max-width:250px}
+.chosen-cities.city-v3 .cities-grid{gap:17px}
+.chosen-cities.city-v3 .landmark-card{border-radius:0;border:0;border-bottom:1px solid #D9E3F0;padding:17px 0 23px;background:transparent;box-shadow:none}
+.chosen-cities.city-v3 .landmark-card:hover{transform:translateY(-4px);border-bottom-color:#D73B4A66}
+.chosen-cities.city-v3 .city-card-cap{border-top:1px solid #D9E3F0;padding-top:17px;margin-top:-17px;font-size:9px}
+.chosen-cities.city-v3 .city-picture{margin:26px 0 22px;background:#F7F9FC;border-radius:4px;padding:7px 3px}
+.chosen-cities.city-v3 .landmark-card:nth-child(2) .city-picture{background:#ECF2FB88}
+.chosen-cities.city-v3 .landmark-card:nth-child(3) .city-picture{background:#FCEDEF66}
+.chosen-cities.city-v3 .city-landmark{stroke-width:1.8}
+.chosen-cities.city-v3 .city-card-title{align-items:flex-start;gap:5px}
+.chosen-cities.city-v3 .city-card-title h3{font-family:Golos,sans-serif;font-size:20px;line-height:1.5;letter-spacing:-.03em}
+.chosen-cities.city-v3 .city-card-title .city-arrow{width:17px;height:22px;margin-top:4px}
+.chosen-cities.city-v3 .city-landmark-caption{font-size:9px;line-height:1.9;max-width:190px}
+.chosen-cities.city-v3 .cities-tail{grid-column:1/-1;margin-top:26px;border-top:1px solid #D9E3F0;padding-top:17px}
+@media(min-width:1600px){.chosen-cities .city-landmark{max-height:245px}}
+@media(max-width:1100px){.chosen-cities .landmark-card{padding-left:20px;padding-right:20px}.chosen-cities .city-card-title h3{font-size:19px}.chosen-cities .city-landmark-caption{font-size:9px}.chosen-cities.city-v3>.wrap{grid-template-columns:220px minmax(0,1fr);gap:0 25px}.chosen-cities.city-v3 .cities-heading h2{font-size:28px}.chosen-cities.city-v3 .city-card-title h3{font-size:17px}.chosen-cities.city-v3 .cities-grid{gap:15px}}
+@media(max-width:900px){.chosen-cities{padding:65px 0}.chosen-cities .cities-heading{gap:28px}.chosen-cities .cities-intro{max-width:300px;font-size:14px}.chosen-cities .cities-grid{gap:16px}.chosen-cities .landmark-card{padding:19px 16px}.chosen-cities .city-card-title h3{font-family:Golos,sans-serif;font-size:19px}.chosen-cities .city-picture{margin:20px -8px 13px}.chosen-cities .city-card-bottom{font-size:11px;margin-top:19px;padding-top:13px}.chosen-cities.city-v2 .landmark-card{padding:20px 17px}.chosen-cities.city-v2 .city-card-title h3{font-size:19px}.chosen-cities.city-v3>.wrap{display:block}.chosen-cities.city-v3 .cities-heading{display:flex;align-items:flex-end;margin-bottom:34px}.chosen-cities.city-v3 .cities-intro{max-width:310px;margin:0 0 3px}.chosen-cities.city-v3 .city-card-title h3{font-size:19px}}
+@media(max-width:620px){.chosen-cities{padding:49px 0 45px}.chosen-cities .cities-heading{display:block;margin-bottom:27px}.chosen-cities .cities-kicker{font-size:9px;gap:9px;margin-bottom:16px}.chosen-cities .cities-kicker>span{width:25px;height:25px;font-size:9px}.chosen-cities .cities-heading h2{font-size:28px;line-height:1.4}.chosen-cities .cities-intro{max-width:450px;margin-top:18px;font-size:15px;line-height:1.8}.chosen-cities .cities-grid{grid-template-columns:1fr;gap:17px}.chosen-cities .landmark-card{padding:21px 23px 20px;border-radius:13px}.chosen-cities .city-card-cap{font-size:9px}.chosen-cities .city-card-code{font-size:9px}.chosen-cities .city-picture{max-width:330px;margin:10px auto 5px}.chosen-cities .city-landmark{max-height:190px}.chosen-cities .city-card-title h3{font-family:Unbounded,Golos,sans-serif;font-size:22px;line-height:1.5}.chosen-cities .city-landmark-caption{font-size:10px;margin-top:7px}.chosen-cities .city-card-bottom{margin-top:19px;padding-top:13px;font-size:12px}.chosen-cities .cities-tail{flex-direction:column;align-items:flex-start;gap:13px;margin-top:22px}.chosen-cities .cities-tail>p{font-size:11px;max-width:260px}.chosen-cities .cities-tail button{font-size:14px;padding:5px 0}.chosen-cities.city-v2 .cities-heading{text-align:left;margin-bottom:29px}.chosen-cities.city-v2 .cities-kicker{justify-content:flex-start}.chosen-cities.city-v2 .cities-intro{margin:18px 0 0}.chosen-cities.city-v2 .landmark-card{padding:22px 24px 20px;border-radius:16px}.chosen-cities.city-v2 .city-picture{margin:14px auto 10px}.chosen-cities.city-v2 .city-landmark{max-height:205px}.chosen-cities.city-v2 .city-card-title h3{font-size:22px}.chosen-cities.city-v2 .cities-tail{align-items:center}.chosen-cities.city-v3 .cities-heading{display:block;margin-bottom:30px}.chosen-cities.city-v3 .cities-heading h2{font-size:28px}.chosen-cities.city-v3 .cities-intro{margin-top:17px;max-width:450px;font-size:15px;line-height:1.8}.chosen-cities.city-v3 .cities-grid{gap:22px}.chosen-cities.city-v3 .landmark-card{padding:0 0 19px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 17px;align-items:center}.chosen-cities.city-v3 .city-card-cap{grid-column:1/-1;margin:0 0 13px;padding-top:14px;border-top:0;font-size:9px}.chosen-cities.city-v3 .city-picture{grid-column:1;grid-row:2/4;padding:9px 2px;margin:0;align-self:stretch;display:flex;align-items:center}.chosen-cities.city-v3 .city-landmark{width:100%;max-height:140px;stroke-width:1.9}.chosen-cities.city-v3 .city-card-title{grid-column:2;align-self:end;align-items:center;margin-top:10px;gap:3px}.chosen-cities.city-v3 .city-card-title h3{font-size:18px;line-height:1.55}.chosen-cities.city-v3 .city-card-title .city-arrow{width:15px;height:18px;margin:0}.chosen-cities.city-v3 .city-landmark-caption{grid-column:2;align-self:start;font-size:9px;line-height:1.9;margin-top:8px;padding-bottom:13px}.chosen-cities.city-v3 .cities-tail{margin-top:20px}}
+@media(max-width:380px){.chosen-cities .city-card-title h3,.chosen-cities.city-v2 .city-card-title h3{font-size:20px}.chosen-cities .landmark-card{padding-left:20px;padding-right:20px}.chosen-cities.city-v3 .city-card-title h3{font-size:16px}.chosen-cities.city-v3 .city-landmark-caption{font-size:8px}.chosen-cities.city-v3 .landmark-card{gap:0 13px}}
+@media(prefers-reduced-motion:reduce){.chosen-cities .landmark-card,.chosen-cities .city-arrow{transition:none}.chosen-cities .landmark-card:hover,.chosen-cities .landmark-card:hover .city-arrow{transform:none}}
+
+.chosen-cities .city-card-title,.chosen-cities .city-card-title h3{min-width:0}

@@ -1,0 +1,5 @@
+(()=>{'use strict';const h=document.querySelector('.article-hero h1');if(h){h.innerHTML='<span class="article-title-topic">Автошколы</span> <span class="article-title-city">Санкт-Петербурга:</span> <span class="hero-subtitle">выбор с опорой на <mark>факты</mark></span>'}
+const summary=document.querySelector('.mobile-toc>summary');if(summary)summary.setAttribute('aria-label','Открыть содержание статьи');
+const sections=[...document.querySelectorAll('.article-content>section[id]')];let queued=false;function track(){const root=document.documentElement,max=root.scrollHeight-root.clientHeight,progress=max?Math.min(100,Math.max(0,scrollY/max*100)):0;document.querySelector('.reading-progress')?.style.setProperty('--read',progress+'%');queued=false}addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(track)}},{passive:true});track();
+document.querySelectorAll('.article-faq details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.article-faq details').forEach(x=>{if(x!==d)x.open=false})}));
+})();

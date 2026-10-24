@@ -1,0 +1,5 @@
+
+/* Approved 23 October: soft rose, square geometry. */
+.chosen-faq .faq-tabs button[aria-selected=true]{background:#fff6f8;border-bottom-color:#f3dfe4;color:var(--navy)}
+.chosen-faq .faq-tabs button[aria-selected=true]>small{color:var(--red)}
+.chosen-faq .faq-tabs button[aria-selected=true]>span:last-child{color:var(--blue)}

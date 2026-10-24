@@ -1,0 +1,51 @@
+/* Final mobile article: editorial 1, compact rhythm of 2. */
+@media(max-width:700px){
+/* B: a visual entrance and a more compact comparison sheet. */
+.article-final .article-hero{background:#fff;padding-bottom:26px}
+.article-final .article-meta-line{margin-top:20px}
+.article-final .article-hero h1{font-size:29px}
+.article-final .article-deck{font-size:15px;line-height:1.8}
+.article-final .article-cover{margin-inline:-20px;margin-top:24px}
+.article-final .article-cover>img{border-radius:0;max-height:205px}
+.article-final .article-cover>figcaption{padding:12px 20px 0;font-size:10px}
+.article-final .article-byline{gap:5px;margin-top:18px}
+.article-final .article-content{font-size:16px}
+.article-final .article-intro>p,.article-final .article-section>p{font-size:16px;line-height:1.85;margin-block:22px}
+.article-final .article-content .article-section{margin-top:42px}
+.article-final .article-section-title h2{font-size:25px}
+.article-final .editor-choice{padding:21px 20px;background:#fff6f8}
+.article-final .editor-choice h3{font:600 20px/1.5 Golos,sans-serif;letter-spacing:-.03em}
+.article-final .editor-choice p{font-size:14px}
+.article-final .article-method{border-radius:0;padding:23px 22px}
+.article-final .article-method>div{padding-bottom:19px}
+.article-final .article-method>div>span{font-size:61px}
+.article-final .article-method ul{gap:11px;padding-top:18px}
+.article-final .participant{background:#fff;border:0;border-bottom:1px solid var(--line)}
+.article-final .participant-body{padding-top:20px}
+.article-final .demo-caption{font-size:10px;margin-bottom:21px}
+.article-final .facts-grid{margin-top:25px}
+.article-final .facts-grid>div{padding-block:17px;gap:13px}
+.article-final .facts-grid h4{font-size:17px}
+.article-final .facts-grid strong{font-size:17px}
+.article-final .participant-description h4{font:600 22px/1.5 Golos,sans-serif;letter-spacing:-.03em}
+.article-final .participant-description p{font-size:15px}
+.article-final .advantages h4,.article-final .contacts h4{font-size:20px}
+.article-final .advantages li{font-size:14px}
+.article-final .review-themes{background:#f0f5fc;padding:22px 20px}
+.article-final .review-themes h4{font-size:19px}
+.article-final .review-columns p{font-size:14px}
+.article-final .review-source{font-size:10px!important}
+.article-final .suitability p{font-size:14px}
+.article-final .contacts-grid>div{padding-block:18px}
+.article-final .contacts-grid strong{font-size:13px}
+.article-final .participant-description,.article-final .block-separator{padding-top:25px}
+.article-final .participant-description{padding-bottom:25px}
+.article-final .checklist strong{font-size:16px}
+.article-final .checklist p{font-size:14px}
+.article-final .price-rows p{font-size:14px}
+.article-final .article-faq details[open]>p{font-size:14px}
+.article-final .article-faq summary{font-size:14px;min-height:70px}
+.article-final .article-hero h1{font-size:27px}
+.article-final .article-cover{margin:23px 0 0}.article-final .article-cover>img{display:block;height:auto;max-height:none;aspect-ratio:16/9;border-radius:4px}.article-final .article-cover>figcaption{padding:10px 0 0}.article-final .article-hero{background:linear-gradient(130deg,#f1f6fd,#fff 75%)}.article-final .participant-heading{min-height:173px;padding-block:24px}.article-final .participant-heading h3{font-size:23px}.article-final .participant-body{padding-top:21px}.article-final .comparison-table tbody{gap:10px}.article-final .comparison-table tr{padding-block:16px}.article-final .article-method ul{gap:0;padding-top:22px}
+}
+@media(max-width:374px){.article-final .article-hero h1{font-size:27px}.article-final .participant-heading h3{font-size:22px}}

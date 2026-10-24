@@ -1,0 +1,10 @@
+(()=>{'use strict';const dossier=document.querySelector('#dossier-slot .chosen-dossier');if(!dossier||!document.body.classList.contains('mobile-selected'))return;dossier.classList.add('integrated-dossier');
+const tabs=[...dossier.querySelectorAll('.dossier-nav [role=tab]')],nav=dossier.querySelector('.dossier-nav'),panels=dossier.querySelector('.dossier-panels'),score=dossier.querySelector('#ds-panel-1');const copy=score.querySelector('.dossier-copy'),ledger=score.querySelector('.dossier-ledger');score.replaceChildren(copy,ledger);score.classList.add('integrated-score');
+const paths=['<path d="M45 25h20l7 7v29H45V25Zm20 0v9h7M51 43h14M51 50h10"/>','<path d="M41 28h34v25H53l-12 9V28Zm7 9h20m-20 8h13"/>','<path d="m58 24 17 6v14c0 11-17 19-17 19s-17-8-17-19V30l17-6Z"/><path d="m50 43 6 6 11-13"/>'];
+const label=['Оценка','Отзывы','Проверка'];const second=document.body.classList.contains('dossier-layout-2');
+let map;
+if(second){nav.classList.add('map-tabs');tabs.forEach((b,i)=>{b.innerHTML=`<svg viewBox="0 0 116 86" fill="none" aria-hidden="true"><rect x="18" y="9" width="80" height="68" rx="6"/>${paths[i]}</svg><span>${label[i]}</span>`});}
+else{map=document.createElement('div');map.className='shared-evidence-map';map.setAttribute('aria-hidden','true');map.innerHTML=`<svg class="evidence-drawing" viewBox="0 0 300 112" fill="none"><path class="map-link" d="M58 77v20h184V77M150 77v20"/><circle class="map-junction" cx="150" cy="97" r="3"/><g data-map-index="0"><rect x="18" y="9" width="80" height="68" rx="6"/>${paths[0]}</g><g data-map-index="1" transform="translate(92 0)"><rect x="18" y="9" width="80" height="68" rx="6"/>${paths[1]}</g><g data-map-index="2" transform="translate(184 0)"><rect x="18" y="9" width="80" height="68" rx="6"/>${paths[2]}</g></svg>`;panels.before(map);}
+function sync(){const i=Math.max(0,tabs.findIndex(b=>b.getAttribute('aria-selected')==='true'));dossier.dataset.mapActive=String(i);map?.querySelectorAll('[data-map-index]').forEach((g,n)=>g.classList.toggle('active',n===i));}
+nav.addEventListener('click',()=>queueMicrotask(sync));nav.addEventListener('keydown',()=>queueMicrotask(sync));sync();
+})();

@@ -1,0 +1,4 @@
+/* One chosen system of main tabs; text column can shrink on narrow phones. */
+.integrated-dossier .dossier-review-top>div{min-width:0;flex:1}
+@media(max-width:700px){.integrated-dossier .dossier-review-top{gap:14px}.integrated-dossier .dossier-review h2{font-size:19px!important;line-height:1.4!important;letter-spacing:-.015em;overflow-wrap:normal}.integrated-dossier .dossier-review-top>strong{flex:none;font-size:56px!important}}
+@media(max-width:400px){.integrated-dossier .dossier-review h2{font-size:17px!important}.integrated-dossier .dossier-review-top>strong{font-size:51px!important}.integrated-dossier .dossier-review-top{gap:12px}}
