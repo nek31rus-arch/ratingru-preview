@@ -1,0 +1,46 @@
+/* Clean navigation. No folder masks, inverse corners or inherited .dossier-nav rules. */
+.concept-dossier{--accent:#f28593;--soft:#aabfd9;--edge:#b4cceb25;--panel:#18314e;background:linear-gradient(125deg,#20436b,#142943 75%);box-shadow:0 18px 40px #13274312}
+.concept-dossier .dossier-cap{border:0;padding-bottom:16px}
+.concept-dossier .dossier-cue{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 24px 16px;font:400 10px/1.5 Golos,sans-serif;color:var(--soft)}
+.concept-dossier .cue-action{color:#d3dfed;font-size:9px}
+.concept-dossier .dossier-switch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;margin:0 22px 10px;padding:5px;background:#0c203960;border:1px solid #b4cceb1c;border-radius:12px}
+.concept-dossier .dossier-switch [role=tab]{appearance:none;position:relative;display:flex;align-items:center;justify-content:center;gap:7px;min-width:0;min-height:44px;margin:0;padding:10px 6px;border:0;border-radius:8px;background:transparent;box-shadow:none;color:var(--soft);font:500 12px/1.3 Golos,sans-serif;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.concept-dossier .dossier-switch [role=tab]::before,.concept-dossier .dossier-switch [role=tab]::after{content:none}
+.concept-dossier .dossier-switch [role=tab]>svg{width:18px;height:18px;flex:none}
+.concept-dossier .dossier-switch [role=tab]:hover{background:#ffffff09;color:#fff}
+.concept-dossier .dossier-switch [role=tab][aria-selected=true]{color:#fff;background:#f2859321;box-shadow:inset 0 0 0 1px #f285935c,0 3px 8px #07182c33}
+.concept-dossier .dossier-switch [role=tab][aria-selected=true]>svg{color:var(--accent)}
+.concept-dossier .dossier-switch [role=tab]:focus-visible,.concept-dossier .page-controls button:focus-visible{outline:2px solid #f28593;outline-offset:3px}
+.concept-dossier .dossier-panels{background:none;border:0}
+.concept-dossier .dossier-page:not([hidden]):not(.dossier-measure){animation:dossier-appear .24s ease-out}
+.concept-dossier .dossier-foot{background:#0d213c30;border-top:1px solid #b4cceb15}
+.concept-dossier.article-dossier .dossier-cue{padding-inline:18px;font-size:9px;padding-bottom:12px}
+.concept-dossier.article-dossier .dossier-switch{margin-inline:16px}
+@keyframes dossier-appear{from{opacity:.3;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){
+.concept-dossier .dossier-cap{padding-bottom:15px}
+.concept-dossier .dossier-cue{padding:0 18px 15px;font-size:9px}
+.concept-dossier .cue-action{font-size:8px}
+.concept-dossier .dossier-switch{margin:0 15px 5px;gap:4px;padding:4px}
+.concept-dossier .dossier-switch [role=tab]{font-size:11px;min-height:57px;flex-direction:column;gap:5px;padding:8px 4px}
+.concept-dossier .dossier-switch [role=tab]>svg{width:21px;height:21px}
+.concept-dossier .page-controls{gap:10px}
+.concept-dossier .page-controls button{width:36px;height:36px}
+.concept-dossier.article-dossier.integrated-dossier .dossier-panels{height:336px}
+.concept-dossier.integrated-dossier .dossier-panels>.dossier-page{padding-top:18px!important;padding-bottom:18px!important;justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){.concept-dossier .dossier-switch [role=tab]{transition:none}.concept-dossier .dossier-page:not([hidden]){animation:none}}
+/* Keep the full word and its punctuation visible on the narrowest approved phone. */
+@media(max-width:374px){.concept-dossier.integrated-dossier .dossier-review-top{gap:8px}.concept-dossier.integrated-dossier .dossier-review h2{font-size:16px!important}.concept-dossier.integrated-dossier .dossier-review-top>div{min-width:0}}
+/* Caption graphics repeat the existing thin, unfilled icon system. */
+.concept-dossier .dossier-caption-row{display:flex;align-items:center;gap:9px;margin:0 0 10px;min-height:22px}
+.concept-dossier .dossier-caption-row>svg{flex:0 0 22px;width:22px;height:22px;color:#9bb8db}
+.concept-dossier .dossier-caption-row>.dossier-kicker{flex:1;min-width:0;margin:0!important}
+@media(max-width:700px){
+ .concept-dossier.integrated-dossier .dossier-review-top{margin-bottom:14px}
+ .concept-dossier.integrated-dossier .dossier-review-pair{margin-top:14px;padding-top:12px}
+ .concept-dossier .dossier-caption-row{gap:10px;margin-bottom:10px;min-height:28px}
+ .concept-dossier .dossier-caption-row>svg{flex-basis:28px;width:28px;height:28px}
+ .concept-dossier .dossier-caption-row>.dossier-kicker{font-size:8px!important;line-height:1.6}
+ .concept-dossier.article-dossier.integrated-dossier .dossier-panels{height:356px}
+}
