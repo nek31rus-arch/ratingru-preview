@@ -28,6 +28,8 @@ class Document(HTMLParser):
 actual={str(f.relative_to(SITE)) for f in SITE.rglob('*') if f.is_file()}
 assert actual==ALLOWED,('Unexpected or missing files',sorted(actual-ALLOWED),sorted(ALLOWED-actual))
 assert not any(f.is_symlink() for f in SITE.rglob('*'))
+# Approved logo master: change only after an explicit visual approval.
+assert hashlib.sha256((SITE/'logo.svg').read_bytes()).hexdigest()=='813319f138c77b489cbbf55fc3f9199c7f6405830f00960bc8076aeb632abf48', 'Logo differs from the approved master'
 for name in sorted(actual):
  f=SITE/name
  if f.suffix in {'.html','.css','.js','.txt','.svg'}:
