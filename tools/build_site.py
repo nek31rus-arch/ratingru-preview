@@ -37,7 +37,7 @@ for name in sorted(actual):
   assert not re.search(r'/Users/|127\.0\.0\.1|localhost|file://|plugin://|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}',text),('Non-public marker',name)
  if name in PAGES|LAYOUTS:
   doc=Document(text);assert doc.robots==[(True,'noindex, nofollow')],('robots',name)
-  assert 'favicon.svg?v=20261026' in doc.refs and 'favicon.ico?v=20261026' in doc.refs and 'apple-touch-icon.png' in doc.refs and 'site.webmanifest' in doc.refs,('Missing brand icons',name)
+  assert 'favicon.svg?v=20261026' in doc.refs and 'favicon.ico?v=20261026' in doc.refs and 'apple-touch-icon.png?v=17' in doc.refs and 'site.webmanifest' in doc.refs,('Missing brand icons',name)
   assert len(doc.ids)==len(set(doc.ids)),('duplicate IDs',name)
   for ref in doc.refs:
    u=urlsplit(ref)

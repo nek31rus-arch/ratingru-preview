@@ -1,6 +1,6 @@
 /* The masthead stays on screen, with anchor offsets measured from its real height. */
-:root{--rr-header-height:90px}
-html{scroll-padding-top:calc(var(--rr-header-height) + 20px)!important}
+:root{--rr-header-height:90px;--rr-anchor-gap:20px}
+html{scroll-padding-top:calc(var(--rr-header-height) + var(--rr-anchor-gap))!important}
 body>.site-header{position:sticky!important;top:0;z-index:80;background:#fff;box-shadow:0 3px 18px #13274308}
 .article-desktop .toc-sticky{top:calc(var(--rr-header-height) + 20px)}
 .article-content section[id],.article-comments,#catalog-results{scroll-margin-top:0}
