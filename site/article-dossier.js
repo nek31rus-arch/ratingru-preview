@@ -2,7 +2,7 @@
 (()=>{'use strict';const slot=document.getElementById('article-dossier-slot');if(!slot||!window.renderDossier)return;
 slot.innerHTML=window.renderDossier(3);const dossier=slot.querySelector('.chosen-dossier');dossier.classList.add('article-dossier');
 const ring=dossier.querySelector('.rating-widget');ring.dataset.label='Пример шкалы';ring.dataset.scoreDescription='Пример оформления шкалы, не оценка всех автошкол';ring.style.setProperty('--ring-size','130px');
-dossier.querySelector('.dossier-cap small').textContent='КАК ЧИТАТЬ РАЗБОР';
+dossier.querySelector('.dossier-cap small').textContent='КАК ЧИТАТЬ РЕЙТИНГ';
 dossier.querySelector('.dossier-copy h2').innerHTML='Условия. Отзывы. Проверка.';
 dossier.querySelector('.dossier-copy p').textContent='Сопоставляйте основания, а не только итоговый балл.';
 dossier.querySelector('.dossier-foot').innerHTML='<span aria-hidden="true"></span>Демонстрация шкалы. Это не оценка всех автошкол.';

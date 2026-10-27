@@ -26,7 +26,7 @@
     { name: 'Казань', code: '03', key: 'kazan', note: 'Кул-Шариф · башня Сююмбике', description: 'Казань: купол мечети и ступенчатая башня из простых геометрических фигур' }
   ];
   const illustration = (city, variant) => `<svg class="city-landmark city-art-v${variant}" viewBox="0 0 360 225" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="${city.description}">${cityArt[variant - 1][city.key]}</svg>`;
-  const card = (city, variant) => `<a class="landmark-card landmark-${city.key}" href="${document.body.classList.contains('mobile-home')?'category.html':'category.html'}?city=${encodeURIComponent(city.name)}" aria-label="${city.name} — перейти к разборам города">
+  const card = (city, variant) => `<a class="landmark-card landmark-${city.key}" href="${document.body.classList.contains('mobile-home')?'category.html':'category.html'}?city=${encodeURIComponent(city.name)}" aria-label="${city.name} — перейти к рейтингам города">
       <div class="city-card-cap"><span>Город в деталях</span><span class="city-card-code">${city.code}</span></div>
       <div class="city-picture">${illustration(city, variant)}</div>
       <div class="city-card-title"><h3>${city.name}</h3></div>

@@ -1,4 +1,12 @@
-/* Shared navigation: preserve the approved header while making room for the article link. */
-@media(min-width:921px) and (max-width:1280px){.site-header .brand-note{display:none}.site-header .main-nav{gap:22px}.site-header .main-nav a{font-size:14px}}
-@media(min-width:921px) and (max-width:1050px){.site-header .brand img{width:190px;height:auto}.site-header .location{max-width:205px}.site-header .main-nav{gap:16px}}
-@media(min-width:701px) and (max-width:760px){.site-header .header-inner{gap:12px}.site-header .brand img{width:150px;height:auto}.site-header .main-nav{gap:12px}.site-header .main-nav a{font-size:11px}.site-header .location{padding-inline:8px}}
+/* Shared navigation for ratings, news and the example article. */
+@media(min-width:1051px) and (max-width:1280px){.site-header .brand-note{display:none}.site-header .brand img{width:200px;height:auto}.site-header .main-nav{gap:18px}.site-header .main-nav a{font-size:13px}.site-header .location{max-width:230px}}
+/* Keep the desktop reading layout on tablets, with a complete expandable menu. */
+@media(min-width:701px) and (max-width:1050px){
+.site-header .header-inner{flex-wrap:nowrap;gap:16px}.site-header .brand-note{display:none}.site-header .brand img{width:190px;height:auto}
+.site-header .header-inner .main-nav{display:none;position:absolute;top:100%;left:0;right:0;margin:0;padding:15px 28px 20px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 12px 20px #1327430a;gap:0;z-index:85}
+.site-header .header-inner .main-nav.is-open{display:flex;flex-direction:column;align-items:stretch}
+.site-header .header-inner .main-nav a{padding:12px 0;font-size:15px}
+.site-header .header-inner .location{margin-left:auto;max-width:230px;min-width:0}
+.site-header .header-inner .location [data-city-label]{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:160px}
+.site-header .header-inner .menu-toggle{display:block;flex:none;width:42px;height:42px;margin:0;border:0;border-radius:8px;background:#edf3fc;padding:10px}
+}

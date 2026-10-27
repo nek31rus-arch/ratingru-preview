@@ -6,9 +6,9 @@ from urllib.parse import urlsplit, unquote
 import hashlib,re,shutil,json
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'site';OUT=ROOT/'_site'
-PAGES={'methodology.html','about.html','privacy.html','404.html','index.html','home.html','category.html','catalog-mobile.html','article.html','article-desktop.html','article-mobile.html'}
-ROOT_ASSETS={'participant-links.js','favicon.svg','favicon.ico','apple-touch-icon.png','android-chrome-192x192.png','android-chrome-512x512.png','site.webmanifest','information.css','information-footer.css','information.js','project-details.js','article-dossier.js','experience-v10.css','experience-v10.js','dossier-concepts.css','dossier-concepts.js','approved.css','article-comments.js','article-desktop.css','article-final.css','article-mobile.css','article-mobile.js','article-refinements.css','catalog-mobile.css','cities.css','cities.js','common.css','common.js','dossier-integrated.css','dossier-integrated.js','dossier.js','final-home.css','logo.svg','metal-dial.css','metal-dial.js','mobile-compose-v5.js','mobile-selected.css','mobile.css','refinements.css','unified-page.js','unified-nav.css','selected-render.js','selected.css','selected.js','site.css','site.js','ui-refinements.css','robots.txt','.nojekyll'}
-MEDIA={'assets/'+x for x in ['bank.webp','bank-480.webp','driving.webp','driving-480.webp','restaurant.webp','restaurant-480.webp']}
+PAGES={'news.html','news-item.html','methodology.html','about.html','privacy.html','404.html','index.html','home.html','category.html','catalog-mobile.html','article.html','article-desktop.html','article-mobile.html'}
+ROOT_ASSETS={'news.css','news.js','news-route.js','news-data.json','news-ratings.js','ratings-data.json','participant-links.js','favicon.svg','favicon.ico','apple-touch-icon.png','android-chrome-192x192.png','android-chrome-512x512.png','site.webmanifest','information.css','information-footer.css','information.js','project-details.js','article-dossier.js','experience-v10.css','experience-v10.js','dossier-concepts.css','dossier-concepts.js','approved.css','article-comments.js','article-desktop.css','article-final.css','article-mobile.css','article-mobile.js','article-refinements.css','catalog-mobile.css','cities.css','cities.js','common.css','common.js','dossier-integrated.css','dossier-integrated.js','dossier.js','final-home.css','logo.svg','metal-dial.css','metal-dial.js','mobile-compose-v5.js','mobile-selected.css','mobile.css','refinements.css','unified-page.js','unified-nav.css','selected-render.js','selected.css','selected.js','site.css','site.js','ui-refinements.css','robots.txt','.nojekyll'}
+MEDIA={'assets/'+x for x in ['bank.webp','bank-480.webp','driving.webp','driving-480.webp','restaurant.webp','restaurant-480.webp','news-furniture.svg','news-cleaner.svg','news-translate.svg','news-city.svg','news-dossier.svg']}
 FONTS={'fonts/'+x for x in ['Golos.woff2','Unbounded.woff2','OFL-Golos.txt','OFL-Unbounded.txt']}
 LAYOUTS={'layouts/'+page+'-'+kind+'.html' for page in ['home','catalog','article'] for kind in ['desktop','mobile']}
 ALLOWED=PAGES|LAYOUTS|ROOT_ASSETS|MEDIA|FONTS
@@ -32,7 +32,7 @@ assert not any(f.is_symlink() for f in SITE.rglob('*'))
 assert hashlib.sha256((SITE/'logo.svg').read_bytes()).hexdigest()=='813319f138c77b489cbbf55fc3f9199c7f6405830f00960bc8076aeb632abf48', 'Logo differs from the approved master'
 for name in sorted(actual):
  f=SITE/name
- if f.suffix in {'.html','.css','.js','.txt','.svg'}:
+ if f.suffix in {'.html','.css','.js','.txt','.svg','.json'}:
   text=f.read_text()
   assert not re.search(r'/Users/|127\.0\.0\.1|localhost|file://|plugin://|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}',text),('Non-public marker',name)
  if name in PAGES|LAYOUTS:
@@ -54,6 +54,27 @@ for name in sorted(actual):
  elif f.suffix=='.css':
   for ref in re.findall(r'url\([\'\"]?([^\)\'\"]+)',text):
    if not ref.startswith(('data:','http:','https:','#')):assert (f.parent/urlsplit(ref).path).is_file(),(name,ref)
+# Validate every client-routed news document as well as the entry HTML.
+news=json.loads((SITE/'news-data.json').read_text())
+assert news and all(re.fullmatch(r'[a-z0-9-]+',key) for key in news)
+for key,item in news.items():
+ text=item['html'];doc=Document(text)
+ assert doc.robots==[(True,'noindex, nofollow')],('news robots',key)
+ assert len(doc.ids)==len(set(doc.ids)),('news duplicate IDs',key)
+ assert not re.search(r'/Users/|127\.0\.0\.1|localhost|file://|plugin://',text),('private news marker',key)
+ for ref in doc.refs:
+  u=urlsplit(ref)
+  if u.scheme or u.netloc:continue
+  assert not u.path.startswith('/'),('news root-relative link',key,ref)
+  assert not u.path or (SITE/unquote(u.path)).is_file(),('news resource',key,ref)
+ratings=json.loads((SITE/'ratings-data.json').read_text())
+assert ratings['limit']<=5
+assert len({a['id'] for a in ratings['articles']})==len(ratings['articles'])
+for article in ratings['articles']:
+ assert article.get('isDemo') or article['status']=='available'
+ if article['status']=='available':
+  u=urlsplit(article['url']);assert not u.scheme and not u.netloc and not u.path.startswith('/')
+  assert (SITE/u.path).is_file(),('missing rating page',article['id'])
 manifest=json.loads((SITE/'site.webmanifest').read_text())
 assert {i['src'] for i in manifest['icons']}=={'android-chrome-192x192.png','android-chrome-512x512.png'}
 assert all((SITE/i['src']).is_file() for i in manifest['icons'])
@@ -61,6 +82,12 @@ assert not re.search(r'(?im)^\s*Disallow\s*:\s*/', (SITE/'robots.txt').read_text
 if OUT.exists():shutil.rmtree(OUT)
 shutil.copytree(SITE,OUT)
 # New approved assets become visible immediately after a deployment.
+for f in OUT.rglob('*.js'):
+ text=f.read_text()
+ for name in ['news-data.json','ratings-data.json']:
+  token=hashlib.sha256((OUT/name).read_bytes()).hexdigest()[:16]
+  text=text.replace("fetch('"+name+"')","fetch('"+name+"?v="+token+"')")
+ f.write_text(text)
 for f in OUT.rglob('*.html'):
  text=f.read_text()
  def version(m):

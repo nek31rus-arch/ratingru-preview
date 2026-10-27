@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "limit": 5,
+  "articles": [
+    {
+      "id": "moving-0",
+      "title": "Грузоперевозки",
+      "focus": "Упаковка, подъём и условия перевозки",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "moving"
+      ],
+      "status": "demo",
+      "icon": "van",
+      "headline": "Топ-10 компаний по грузоперевозкам",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "furniture-0",
+      "title": "Мебель на заказ",
+      "focus": "Материалы, сроки и состав договора",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "furniture"
+      ],
+      "status": "demo",
+      "icon": "sofa",
+      "headline": "Топ-12 производителей мебели на заказ",
+      "isDemo": true,
+      "demoCount": 12
+    },
+    {
+      "id": "assembly-0",
+      "title": "Сборка мебели",
+      "focus": "Стоимость работ и ответственность мастера",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "assembly"
+      ],
+      "status": "demo",
+      "icon": "tools",
+      "headline": "Рейтинг компаний по сборке мебели",
+      "isDemo": true
+    },
+    {
+      "id": "interior-0",
+      "title": "Дизайн интерьера",
+      "focus": "Состав проекта и работа с пространством",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "interior"
+      ],
+      "status": "demo",
+      "icon": "interior",
+      "headline": "Топ-10 студий дизайна интерьера",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "cleaning-0",
+      "title": "Клининговые компании",
+      "focus": "Состав уборки и дополнительные услуги",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "cleaning"
+      ],
+      "status": "demo",
+      "icon": "cleaning",
+      "headline": "Топ-10 клининговых компаний",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "repair-0",
+      "title": "Ремонт квартир",
+      "focus": "Смета, этапы работ и гарантии",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "repair"
+      ],
+      "status": "demo",
+      "icon": "repair",
+      "headline": "Рейтинг компаний по ремонту квартир",
+      "isDemo": true
+    },
+    {
+      "id": "language-0",
+      "title": "Языковые школы",
+      "focus": "Программа, формат и практика",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "language"
+      ],
+      "status": "demo",
+      "icon": "language",
+      "headline": "Топ-10 языковых школ",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "restaurants-0",
+      "title": "Рестораны",
+      "focus": "Кухня, условия и впечатления гостей",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "restaurants"
+      ],
+      "status": "demo",
+      "icon": "restaurant",
+      "headline": "Рейтинг ресторанов города",
+      "isDemo": true
+    },
+    {
+      "id": "carservice-0",
+      "title": "Автосервисы",
+      "focus": "Диагностика, работы и гарантии",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "carservice"
+      ],
+      "status": "demo",
+      "icon": "service",
+      "headline": "Топ-10 автосервисов",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "moving-1",
+      "title": "Грузоперевозки",
+      "focus": "Упаковка, подъём и условия перевозки",
+      "city": "Москва",
+      "topics": [
+        "moving"
+      ],
+      "status": "demo",
+      "icon": "van",
+      "headline": "Топ-10 компаний по грузоперевозкам",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "furniture-1",
+      "title": "Мебель на заказ",
+      "focus": "Материалы, сроки и состав договора",
+      "city": "Москва",
+      "topics": [
+        "furniture"
+      ],
+      "status": "demo",
+      "icon": "sofa",
+      "headline": "Топ-12 производителей мебели на заказ",
+      "isDemo": true,
+      "demoCount": 12
+    },
+    {
+      "id": "assembly-1",
+      "title": "Сборка мебели",
+      "focus": "Стоимость работ и ответственность мастера",
+      "city": "Москва",
+      "topics": [
+        "assembly"
+      ],
+      "status": "demo",
+      "icon": "tools",
+      "headline": "Рейтинг компаний по сборке мебели",
+      "isDemo": true
+    },
+    {
+      "id": "interior-1",
+      "title": "Дизайн интерьера",
+      "focus": "Состав проекта и работа с пространством",
+      "city": "Москва",
+      "topics": [
+        "interior"
+      ],
+      "status": "demo",
+      "icon": "interior",
+      "headline": "Топ-10 студий дизайна интерьера",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "cleaning-1",
+      "title": "Клининговые компании",
+      "focus": "Состав уборки и дополнительные услуги",
+      "city": "Москва",
+      "topics": [
+        "cleaning"
+      ],
+      "status": "demo",
+      "icon": "cleaning",
+      "headline": "Топ-10 клининговых компаний",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "repair-1",
+      "title": "Ремонт квартир",
+      "focus": "Смета, этапы работ и гарантии",
+      "city": "Москва",
+      "topics": [
+        "repair"
+      ],
+      "status": "demo",
+      "icon": "repair",
+      "headline": "Рейтинг компаний по ремонту квартир",
+      "isDemo": true
+    },
+    {
+      "id": "language-1",
+      "title": "Языковые школы",
+      "focus": "Программа, формат и практика",
+      "city": "Москва",
+      "topics": [
+        "language"
+      ],
+      "status": "demo",
+      "icon": "language",
+      "headline": "Топ-10 языковых школ",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "restaurants-1",
+      "title": "Рестораны",
+      "focus": "Кухня, условия и впечатления гостей",
+      "city": "Москва",
+      "topics": [
+        "restaurants"
+      ],
+      "status": "demo",
+      "icon": "restaurant",
+      "headline": "Рейтинг ресторанов города",
+      "isDemo": true
+    },
+    {
+      "id": "carservice-1",
+      "title": "Автосервисы",
+      "focus": "Диагностика, работы и гарантии",
+      "city": "Москва",
+      "topics": [
+        "carservice"
+      ],
+      "status": "demo",
+      "icon": "service",
+      "headline": "Топ-10 автосервисов",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "moving-2",
+      "title": "Грузоперевозки",
+      "focus": "Упаковка, подъём и условия перевозки",
+      "city": "Казань",
+      "topics": [
+        "moving"
+      ],
+      "status": "demo",
+      "icon": "van",
+      "headline": "Топ-10 компаний по грузоперевозкам",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "furniture-2",
+      "title": "Мебель на заказ",
+      "focus": "Материалы, сроки и состав договора",
+      "city": "Казань",
+      "topics": [
+        "furniture"
+      ],
+      "status": "demo",
+      "icon": "sofa",
+      "headline": "Топ-12 производителей мебели на заказ",
+      "isDemo": true,
+      "demoCount": 12
+    },
+    {
+      "id": "assembly-2",
+      "title": "Сборка мебели",
+      "focus": "Стоимость работ и ответственность мастера",
+      "city": "Казань",
+      "topics": [
+        "assembly"
+      ],
+      "status": "demo",
+      "icon": "tools",
+      "headline": "Рейтинг компаний по сборке мебели",
+      "isDemo": true
+    },
+    {
+      "id": "interior-2",
+      "title": "Дизайн интерьера",
+      "focus": "Состав проекта и работа с пространством",
+      "city": "Казань",
+      "topics": [
+        "interior"
+      ],
+      "status": "demo",
+      "icon": "interior",
+      "headline": "Топ-10 студий дизайна интерьера",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "cleaning-2",
+      "title": "Клининговые компании",
+      "focus": "Состав уборки и дополнительные услуги",
+      "city": "Казань",
+      "topics": [
+        "cleaning"
+      ],
+      "status": "demo",
+      "icon": "cleaning",
+      "headline": "Топ-10 клининговых компаний",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "repair-2",
+      "title": "Ремонт квартир",
+      "focus": "Смета, этапы работ и гарантии",
+      "city": "Казань",
+      "topics": [
+        "repair"
+      ],
+      "status": "demo",
+      "icon": "repair",
+      "headline": "Рейтинг компаний по ремонту квартир",
+      "isDemo": true
+    },
+    {
+      "id": "language-2",
+      "title": "Языковые школы",
+      "focus": "Программа, формат и практика",
+      "city": "Казань",
+      "topics": [
+        "language"
+      ],
+      "status": "demo",
+      "icon": "language",
+      "headline": "Топ-10 языковых школ",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "restaurants-2",
+      "title": "Рестораны",
+      "focus": "Кухня, условия и впечатления гостей",
+      "city": "Казань",
+      "topics": [
+        "restaurants"
+      ],
+      "status": "demo",
+      "icon": "restaurant",
+      "headline": "Рейтинг ресторанов города",
+      "isDemo": true
+    },
+    {
+      "id": "carservice-2",
+      "title": "Автосервисы",
+      "focus": "Диагностика, работы и гарантии",
+      "city": "Казань",
+      "topics": [
+        "carservice"
+      ],
+      "status": "demo",
+      "icon": "service",
+      "headline": "Топ-10 автосервисов",
+      "isDemo": true,
+      "demoCount": 10
+    },
+    {
+      "id": "driving-spb",
+      "title": "Автошколы Санкт-Петербурга",
+      "focus": "Программа, практика и полная стоимость курса",
+      "city": "Санкт-Петербург",
+      "topics": [
+        "driving"
+      ],
+      "status": "available",
+      "url": "article.html",
+      "icon": "car",
+      "headline": "Топ-3 автошкол Санкт-Петербурга",
+      "isDemo": true,
+      "demoCount": 3
+    }
+  ],
+  "includeDemos": true
+}
