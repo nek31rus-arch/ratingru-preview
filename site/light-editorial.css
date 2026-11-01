@@ -1,0 +1,22 @@
+/* Review theme: blue porcelain A / brushed steel B. Shared layout and states. */
+:root{--ds-surface:linear-gradient(130deg,#f1f8fc,#e5eff6 70%,#edf5fa);--ds-ink:#19354b;--ds-muted:#4e6577;--ds-edge:#c7d8e4;--ds-nav:#dbe8f1;--ds-active:#fff8f9;--ds-accent:#ab3f54;--ds-icon:#4b718d;--ds-foot:#dce9f24d}
+
+.chosen-dossier.concept-dossier{--soft:var(--ds-muted);--accent:var(--ds-accent);--edge:var(--ds-edge);background:var(--ds-surface);color:var(--ds-ink);border:1px solid var(--ds-edge);box-shadow:0 14px 35px #233f5810}
+.chosen-dossier.concept-dossier .dossier-cap,.chosen-dossier.concept-dossier h2,.chosen-dossier.concept-dossier .rating-label{color:var(--ds-ink)}
+.chosen-dossier.concept-dossier .dossier-cap small,.chosen-dossier.concept-dossier .dossier-kicker,.chosen-dossier.concept-dossier p,.chosen-dossier.concept-dossier small,.chosen-dossier.concept-dossier .dossier-check li,.chosen-dossier.concept-dossier .dossier-foot{color:var(--ds-muted)}
+.chosen-dossier.concept-dossier .dossier-switch{background:var(--ds-nav);border-color:var(--ds-edge)}
+.chosen-dossier.concept-dossier .dossier-switch [role=tab]{color:var(--ds-muted)}
+.chosen-dossier.concept-dossier .dossier-switch [role=tab]:hover{color:var(--ds-ink);background:#ffffff65}
+.chosen-dossier.concept-dossier .dossier-switch [role=tab][aria-selected=true]{color:var(--ds-ink);background:var(--ds-active);box-shadow:inset 0 0 0 1px #b46b7e59,0 2px 7px #233b4d0e}
+.chosen-dossier.concept-dossier .dossier-caption-row>svg,.chosen-dossier.concept-dossier .dossier-ledger .icon,.chosen-dossier.concept-dossier .dossier-check .icon{color:var(--ds-icon)}
+.chosen-dossier.concept-dossier .dossier-ledger,.chosen-dossier.concept-dossier .dossier-ledger>div,.chosen-dossier.concept-dossier .dossier-review-pair{border-color:var(--ds-edge);color:var(--ds-ink)}
+.chosen-dossier.concept-dossier .dossier-ledger strong,.chosen-dossier.concept-dossier .dossier-review-pair b{color:var(--ds-ink)}
+.chosen-dossier.concept-dossier .dossier-ledger>div:first-child strong,.chosen-dossier.concept-dossier .dossier-review-top>strong{color:var(--ds-accent)}
+.chosen-dossier.concept-dossier .dossier-foot{background:var(--ds-foot);border-color:var(--ds-edge)}
+.chosen-dossier.concept-dossier .dossier-foot>span{background:var(--ds-icon)}
+.news-detail .news-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center;margin-top:30px}
+.news-detail .news-hero-copy{min-width:0}.news-detail .detail-meta{margin-top:0}.news-detail .news-hero-copy h1{font-size:clamp(30px,3vw,43px);line-height:1.35;margin-top:18px}.news-detail .news-hero-copy .detail-lead{font-size:17px;line-height:1.8}.news-detail .news-hero-grid .story-image{margin:0;min-width:0}.news-detail .news-hero-grid .story-image img{aspect-ratio:4/3;border-radius:12px}.news-detail .detail-intro{padding-bottom:34px}.news-detail .detail-layout{border-top:1px solid var(--line);padding-top:30px}.news-detail .article-prose{padding-top:0}.news-detail .news-source-note{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;color:var(--muted);font-size:11px;line-height:1.7}.news-source-note>a{display:inline-flex;min-height:32px;align-items:center;color:#52687c;text-decoration:underline;text-underline-offset:3px}.news-source-note>a:hover{color:var(--blue)}.news-source-note small{display:block;font-size:10px;line-height:1.7;margin-top:6px}
+@media(max-width:760px){.news-detail .news-hero-grid{grid-template-columns:1fr;gap:22px;margin-top:26px}.news-detail .news-hero-copy h1{font-size:28px;line-height:1.4}.news-detail .news-hero-copy .detail-lead{font-size:16px}.news-detail .news-hero-grid .story-image img{aspect-ratio:16/10;border-radius:8px}.news-detail .detail-intro{padding-bottom:25px}.news-detail .detail-layout{padding-top:25px}.news-detail .news-source-note{font-size:12px}.news-source-note small{font-size:11px}}
+/* Remove the inherited dark spotlight; steel/porcelain surface supplies its own light. */
+.chosen-dossier.concept-dossier::before{content:none}
+.chosen-dossier.concept-dossier .dossier-review-pair>div:last-child small{color:var(--ds-accent)}
