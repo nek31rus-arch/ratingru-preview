@@ -6,7 +6,7 @@ from urllib.parse import urlsplit, unquote
 import hashlib,re,shutil,json
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'site';OUT=ROOT/'_site'
-PAGES={'news.html','news-item.html','methodology.html','about.html','privacy.html','404.html','index.html','home.html','category.html','catalog-mobile.html','article.html','article-desktop.html','article-mobile.html'}
+PAGES={'structure.html','news.html','news-item.html','methodology.html','about.html','privacy.html','404.html','index.html','home.html','category.html','catalog-mobile.html','article.html','article-desktop.html','article-mobile.html'}
 ROOT_ASSETS={'light-editorial.css','news.css','news.js','news-route.js','news-data.json','news-ratings.js','ratings-data.json','participant-links.js','favicon.svg','favicon.ico','apple-touch-icon.png','android-chrome-192x192.png','android-chrome-512x512.png','site.webmanifest','information.css','information-footer.css','information.js','project-details.js','article-dossier.js','experience-v10.css','experience-v10.js','dossier-concepts.css','dossier-concepts.js','approved.css','article-comments.js','article-desktop.css','article-final.css','article-mobile.css','article-mobile.js','article-refinements.css','catalog-mobile.css','cities.css','cities.js','common.css','common.js','dossier-integrated.css','dossier-integrated.js','dossier.js','final-home.css','logo.svg','metal-dial.css','metal-dial.js','mobile-compose-v5.js','mobile-selected.css','mobile.css','refinements.css','unified-page.js','unified-nav.css','selected-render.js','selected.css','selected.js','site.css','site.js','ui-refinements.css','robots.txt','.nojekyll'}
 MEDIA={'assets/'+x for x in ['bank.webp','bank-480.webp','driving.webp','driving-480.webp','restaurant.webp','restaurant-480.webp','news-furniture.svg','news-cleaner.svg','news-translate.svg','news-city.svg','news-dossier.svg']}
 FONTS={'fonts/'+x for x in ['Golos.woff2','Unbounded.woff2','OFL-Golos.txt','OFL-Unbounded.txt']}
@@ -89,6 +89,8 @@ for f in OUT.rglob('*.js'):
   text=text.replace("fetch('"+name+"')","fetch('"+name+"?v="+token+"')")
  f.write_text(text)
 for f in OUT.rglob('*.html'):
+ # The self-contained constructor has inline sample strings, not external script attributes.
+ if f.name=='structure.html':continue
  text=f.read_text()
  def version(m):
   prefix,path,suffix=m.groups();asset=OUT/path
