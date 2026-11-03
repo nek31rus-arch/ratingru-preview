@@ -1,0 +1,19 @@
+/* Fixed top edge and reserved results area: typing never recenters the dialog. */
+.city-modal{position:fixed;inset:auto;left:50%;top:var(--rr-city-top,40px);transform:translateX(-50%);margin:0;box-sizing:border-box;width:min(560px,calc(100% - 32px));height:var(--rr-city-height,570px);max-height:none;overflow:hidden;padding:25px;border-radius:15px}
+.city-modal[open]{display:flex;flex-direction:column}
+.city-modal .city-modal-top{flex:none;gap:16px;margin-bottom:20px}
+.city-modal h2{font-size:21px;line-height:1.45}
+.city-modal label,.city-modal input,.city-modal .city-status{flex:none}
+.city-modal .city-status{min-height:20px;margin:12px 0}
+.city-modal .city-options{display:grid;grid-template-columns:1fr 1fr;align-content:start;flex:1;min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain;margin:0;padding:3px;scroll-padding:5px;-webkit-overflow-scrolling:touch}
+.city-modal .city-options button{min-height:46px}
+
+@media(max-width:700px){
+.city-modal{width:calc(100% - 24px);padding:18px;border-radius:13px}
+.city-modal h2{font-size:18px;line-height:1.4;margin-top:7px}
+.city-modal .city-modal-top{margin-bottom:14px;gap:12px}
+.city-modal .city-options{grid-template-columns:minmax(0,1fr)}
+.city-modal .city-status{font-size:11px;margin:10px 0}
+.city-modal input{min-height:48px;font-size:16px}
+}
+.city-modal .city-close{display:grid;place-items:center;padding:0}.city-modal .city-close svg{display:block}.city-modal .city-options button{border:1px solid #dce5f0;background:white;color:#132743;text-align:left}.city-modal input:focus-visible{outline-offset:2px}

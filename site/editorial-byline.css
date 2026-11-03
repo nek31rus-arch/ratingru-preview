@@ -1,0 +1,14 @@
+/* One editorial author/share component, reused in news and practical articles. */
+.rr-editorial-byline{display:flex;align-items:center;gap:11px;max-width:810px;margin-top:25px;font:12px/1.4 Golos,Arial,sans-serif;color:#132743}
+.rr-editor-symbol{display:grid;place-items:center;flex:none;width:44px;height:44px;border:1px solid #dce6f4;border-radius:12px;background:linear-gradient(145deg,#f4f8ff,#eaf1fc);color:#2869d0}
+.rr-editor-symbol>.editorial-icon{width:32px;height:32px;display:block}
+.rr-editorial-author{min-width:0;font-weight:650}.rr-editorial-author small{display:block;font-size:10px;font-weight:400;color:#5b6e86;margin-top:3px}
+.rr-editorial-actions{position:relative;display:flex;flex:none;margin-left:auto}
+.rr-editorial-actions button{display:flex;align-items:center;justify-content:center;width:auto;height:auto;min-height:44px;gap:8px;padding:6px 12px 6px 8px;border:1px solid #d7e3f2;background:linear-gradient(145deg,#f7faff,#edf3fc);border-radius:12px;color:#2869d0;font:550 12px/1.4 Golos,Arial,sans-serif;box-shadow:0 2px 5px #13274304;transition:background .18s,border-color .18s,box-shadow .18s;cursor:pointer}
+.rr-editorial-actions button>span{display:inline;white-space:nowrap}.rr-editorial-actions .share-icon{display:block;width:30px;height:30px;flex:none;transition:transform .18s}
+.rr-editorial-actions button:hover{border-color:#b9cde8;background:#edf4ff;box-shadow:0 3px 8px #13274309}.rr-editorial-actions button:hover .share-icon{transform:translateY(-1px)}
+.rr-editorial-actions button:focus-visible{outline:2px solid #719ad7;outline-offset:3px}
+.rr-share-status{position:absolute;top:calc(100% + 9px);right:0;z-index:110;width:max-content;max-width:min(270px,calc(100vw - 44px));padding:10px 13px;border:1px solid #d7e3f2;border-radius:9px;background:#fff;color:#425d7c;font:11px/1.7 Golos,Arial,sans-serif;box-shadow:0 7px 22px #13274317;white-space:normal}
+@media(max-width:760px){.rr-editorial-byline{gap:9px;margin-top:22px}.rr-editorial-actions button{font-size:11px;gap:5px;padding:6px 10px 6px 6px}.rr-editorial-actions .share-icon{width:28px;height:28px}}
+@media(max-width:374px){.rr-editorial-byline{gap:7px}.rr-editorial-actions button{padding-right:8px;gap:4px;font-size:10px}.rr-editorial-author small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.rr-editorial-actions button,.rr-editorial-actions .share-icon{transition:none}.rr-editorial-actions button:hover .share-icon{transform:none}}

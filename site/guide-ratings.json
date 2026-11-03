@@ -1,0 +1,120 @@
+{
+  "articleId": "fridge-transport",
+  "mode": "preview",
+  "limit": 3,
+  "defaultCity": "spb",
+  "cityOptions": [
+    {
+      "id": "spb",
+      "city": "Санкт-Петербург",
+      "where": "в Санкт-Петербурге"
+    },
+    {
+      "id": "moscow",
+      "city": "Москва",
+      "where": "в Москве"
+    },
+    {
+      "id": "kazan",
+      "city": "Казань",
+      "where": "в Казани"
+    }
+  ],
+  "topics": [
+    {
+      "topic": "moving",
+      "priority": 100,
+      "label": "По вашей задаче",
+      "title": "Рейтинг грузоперевозок",
+      "icon": "van"
+    },
+    {
+      "topic": "movers",
+      "priority": 80,
+      "label": "Помощь с погрузкой",
+      "title": "Рейтинг грузчиков",
+      "icon": "boxes"
+    },
+    {
+      "topic": "fridge-repair",
+      "priority": 40,
+      "label": "Если нужна проверка техники",
+      "title": "Рейтинг ремонта холодильников",
+      "icon": "fridge"
+    }
+  ],
+  "ratings": [
+    {
+      "id": "moving-spb",
+      "cityId": "spb",
+      "city": "Санкт-Петербург",
+      "topic": "moving",
+      "title": "Рейтинг грузоперевозок в Санкт-Петербурге",
+      "displayTitle": "Рейтинг грузоперевозок",
+      "icon": "van",
+      "status": "preview",
+      "url": "rating-moving-spb.html"
+    },
+    {
+      "id": "movers-spb",
+      "cityId": "spb",
+      "city": "Санкт-Петербург",
+      "topic": "movers",
+      "title": "Рейтинг грузчиков в Санкт-Петербурге",
+      "displayTitle": "Рейтинг грузчиков",
+      "icon": "boxes",
+      "status": "preview",
+      "url": "rating-movers-spb.html"
+    },
+    {
+      "id": "moving-moscow",
+      "cityId": "moscow",
+      "city": "Москва",
+      "topic": "moving",
+      "title": "Рейтинг грузоперевозок в Москве",
+      "displayTitle": "Рейтинг грузоперевозок",
+      "icon": "van",
+      "status": "preview",
+      "url": "rating-moving-moscow.html"
+    },
+    {
+      "id": "movers-moscow",
+      "cityId": "moscow",
+      "city": "Москва",
+      "topic": "movers",
+      "title": "Рейтинг грузчиков в Москве",
+      "displayTitle": "Рейтинг грузчиков",
+      "icon": "boxes",
+      "status": "preview",
+      "url": "rating-movers-moscow.html"
+    },
+    {
+      "id": "fridge-repair-moscow",
+      "cityId": "moscow",
+      "city": "Москва",
+      "topic": "fridge-repair",
+      "title": "Рейтинг ремонта холодильников в Москве",
+      "displayTitle": "Рейтинг ремонта холодильников",
+      "icon": "fridge",
+      "status": "preview",
+      "url": "rating-fridge-repair-moscow.html"
+    },
+    {
+      "id": "moving-kazan",
+      "cityId": "kazan",
+      "city": "Казань",
+      "topic": "moving",
+      "title": "Рейтинг грузоперевозок в Казани",
+      "displayTitle": "Рейтинг грузоперевозок",
+      "icon": "van",
+      "status": "preview",
+      "url": "rating-moving-kazan.html"
+    }
+  ],
+  "icons": {
+    "van": "<path d=\"M3 10h18v20H3zM21 16h6l7 8v6H21M26 17v7h8M3 30h4m8 0h10m7 0h3\"/><circle cx=\"11\" cy=\"31\" r=\"4\"/><circle cx=\"28\" cy=\"31\" r=\"4\"/><path d=\"M6 14h12\"/>",
+    "boxes": "<path d=\"m8 17 12-6 12 6v16l-12 6-12-6zM8 17l12 6 12-6M20 23v16m-6-25 12 6v7M11 5h18M14 2l-3 3 3 3m12-6 3 3-3 3\"/>",
+    "fridge": "<rect x=\"7\" y=\"3\" width=\"23\" height=\"32\" rx=\"2\"/><path d=\"M7 14h23M12 7v3m0 8v6m-2 11v3m17-3v3\"/><circle cx=\"27\" cy=\"29\" r=\"9\" fill=\"#f2f6fc\"/><path d=\"m31 24-3 3 2 2 3-3a5 5 0 0 1-6 6l-4 4-2-2 4-4a5 5 0 0 1 6-6Z\"/>"
+  },
+  "productionRule": "Only published records with exact city and an editorially selected topic. No padding to three."
+}

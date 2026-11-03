@@ -1,0 +1,12 @@
+(function(root){'use strict';
+const aliases={spb:'Санкт-Петербург','санкт-петербург':'Санкт-Петербург','санкт петербург':'Санкт-Петербург','питер':'Санкт-Петербург',moscow:'Москва','москва':'Москва',kazan:'Казань','казань':'Казань','вся россия':'Вся Россия'};
+function normalize(value){if(typeof value!=='string')return null;const s=value.trim();return aliases[s.toLowerCase()]||(/^[А-ЯЁа-яё -]{2,80}$/.test(s)?s:null)}
+function resolve(input){const now=input.now||Date.now(),manual=input.manual;if(manual?.source==='manual'&&normalize(manual.city)&&now-manual.at>=0&&now-manual.at<45*86400000)return{city:normalize(manual.city),source:'manual'};const remembered=normalize(input.remembered);if(remembered&&remembered!=='Вся Россия')return{city:remembered,source:'remembered'};const detected=normalize(input.detected);if(detected&&detected!=='Вся Россия')return{city:detected,source:input.detectedSource||'server'};return{city:normalize(input.fallback)||'Вся Россия',source:input.fallback?'preview-default':'unknown'}}
+function selectMany(registry,city){const normalized=normalize(city),topics=[...(registry.topics||[])].sort((a,b)=>b.priority-a.priority),usedUrls=new Set(),usedTopics=new Set(),chosen=[];for(const topic of topics){const records=(registry.ratings||[]).filter(r=>r.city===normalized&&r.topic===topic.topic&&r.url&&(r.status==='published'||registry.mode==='preview'&&r.status==='preview')).sort((a,b)=>a.id.localeCompare(b.id));for(const record of records){if(usedUrls.has(record.url)||usedTopics.has(record.topic))continue;usedUrls.add(record.url);usedTopics.add(record.topic);chosen.push({...record,purpose:topic.label,priority:topic.priority});break}if(chosen.length>=Math.min(3,registry.limit||3))break}return chosen}
+const api={normalize,resolve,selectMany};if(typeof module==='object'&&module.exports)module.exports=api;root.RRCityRouting=api;
+if(typeof document==='undefined')return;
+let config={};try{config=JSON.parse(document.querySelector('#rr-city-config')?.textContent||'{}')}catch{}
+let manual=null,remembered=null;try{manual=JSON.parse(localStorage.getItem('ratingru-city-preference')||'null');remembered=localStorage.getItem('ratingru-experiments-city')}catch{}
+const preview=config.mode==='preview'?new URLSearchParams(location.search).get('preview-city'):null;
+root.RRCityState=resolve({manual,remembered,detected:root.RR_VISITOR_CITY||preview||config.detectedCity,detectedSource:preview?'preview-server-hint':'server',fallback:config.mode==='preview'?config.previewDefault:null});
+})(typeof window!=='undefined'?window:globalThis);

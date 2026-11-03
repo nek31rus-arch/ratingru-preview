@@ -11,6 +11,10 @@ ROOT_ASSETS={'light-editorial.css','news.css','news.js','news-route.js','news-da
 MEDIA={'assets/'+x for x in ['bank.webp','bank-480.webp','driving.webp','driving-480.webp','restaurant.webp','restaurant-480.webp','news-furniture.svg','news-cleaner.svg','news-translate.svg','news-city.svg','news-dossier.svg']}
 FONTS={'fonts/'+x for x in ['Golos.woff2','Unbounded.woff2','OFL-Golos.txt','OFL-Unbounded.txt']}
 LAYOUTS={'layouts/'+page+'-'+kind+'.html' for page in ['home','catalog','article'] for kind in ['desktop','mobile']}
+# v35 selected blog/catalogue/article and their explicit dependencies.
+PAGES|={'blog.html','guide.html','rating-moving-spb.html','rating-movers-spb.html','rating-moving-moscow.html','rating-movers-moscow.html','rating-fridge-repair-moscow.html','rating-moving-kazan.html'}
+ROOT_ASSETS|={'practice.css','practice.js','practice-data.json','practice-catalog.css','practice-ideas.js','editorial-byline.css','editorial-share.js','article-faq.css','article-faq.js','rating-recommendations.css','rating-recommendations.js','city-routing.js','city-control-variants.js','city-dialog.css','guide-ratings.json'}
+MEDIA|={'practice-assets/'+name for name in ['catalog-contract.svg','catalog-fridge-hero.svg','catalog-learning.svg','catalog-packing.svg','catalog-sofa.svg','catalog-van.svg','contract.svg','fridge-hero.svg','fridge-transport.svg','learning.svg','packing.svg','sofa.svg','van.svg']}
 ALLOWED=PAGES|LAYOUTS|ROOT_ASSETS|MEDIA|FONTS
 class Document(HTMLParser):
  def __init__(self,text):super().__init__();self.ids=[];self.refs=[];self.robots=[];self.in_head=False;self.feed(text)

@@ -1,0 +1,54 @@
+/* Derived directly from the approved rating FAQ; no new visual treatment. */
+.article-faq{--navy:var(--ink)}
+.article-faq details{border-top:1px solid var(--line);padding:18px 0}
+.article-faq details:last-child{border-bottom:1px solid var(--line)}
+.article-faq summary{list-style:none;cursor:pointer;font-size:16px;line-height:1.6;font-weight:600;display:flex;align-items:flex-start;justify-content:space-between;gap:20px}
+.article-faq summary::-webkit-details-marker{display:none}
+.article-faq summary>.icon{width:18px;height:22px;color:var(--blue);margin-top:2px}
+.article-faq details[open] summary>.icon{transform:rotate(45deg)}
+.article-faq details>p{font-size:15px;line-height:1.9;color:var(--muted);margin-top:15px;max-width:650px}
+@media(max-width:650px){.article-faq details{padding:17px 0}
+.article-faq summary{font-size:15px;gap:15px;line-height:1.6}
+.article-faq details>p{font-size:14px;line-height:1.85}}
+@media(max-width:700px){@media(max-width:700px){.practice-article .article-faq details{padding:0;border-top:1px solid var(--line)}
+.practice-article .article-faq summary{padding:20px 0;font:550 15px/1.75 Golos,sans-serif;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:74px}
+.practice-article .article-faq summary>.icon{width:18px;height:18px;flex:none}
+.practice-article .article-faq details[open]>summary{background:#fff6f8;padding-inline:12px}
+.practice-article .article-faq details[open]>p{padding:20px 22px 24px;margin:0;background:#edf3fc;font-size:15px;line-height:1.85}
+.practice-article .article-faq details[open]>p{font-size:14px}
+.practice-article .article-faq summary{font-size:14px;min-height:70px}}}
+.desktop-faq-tabs{display:grid}
+.desktop-faq-tabs button{display:grid;grid-template-columns:22px 1fr 20px;gap:13px;padding:20px 16px;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;font:500 15px/1.7 Golos,sans-serif;color:var(--muted);align-items:center}
+.desktop-faq-tabs button>small{font-size:10px;color:var(--red)}
+.desktop-faq-tabs button>span:last-child{font-size:23px;color:var(--blue)}
+.desktop-faq-tabs button[aria-selected=true]{background:#fff6f8;color:var(--navy);font-weight:600}
+.desktop-faq-answer{padding:29px;background:#edf3fc;height:100%;border-radius:0}
+.desktop-faq-answer>.eyebrow{font-size:9px;color:var(--blue);margin-bottom:20px;display:block}
+.desktop-faq-answer h3{font:600 23px/1.5 Unbounded,Golos,sans-serif;letter-spacing:-.045em;margin-bottom:18px}
+.desktop-faq-answer p{font-size:16px;line-height:1.9!important;margin:0!important;color:var(--muted)!important}
+.desktop-faq-layout{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+.desktop-faq-tabs{grid-auto-rows:1fr}
+@media(min-width:981px){.practice-article .desktop-faq-layout{grid-template-columns:1fr 1.1fr;gap:28px}
+.practice-article .desktop-faq-tabs button{font-size:14px;padding:22px 15px;gap:11px}
+.practice-article .desktop-faq-answer{padding:29px}
+.practice-article .desktop-faq-answer h3{font-size:22px}
+.practice-article .desktop-faq-answer p{font-size:15px}}
+@media(min-width:981px) and (max-width:1180px){.practice-article .desktop-faq-layout{gap:20px;grid-template-columns:1fr 1fr}
+.practice-article .desktop-faq-answer{padding:23px}
+.practice-article .desktop-faq-answer h3{font-size:20px}}
+@media(max-width:980px){.desktop-faq-layout{grid-template-columns:1fr;gap:22px}
+.desktop-faq-tabs button{font-size:14px}
+.desktop-faq-answer h3{font-size:21px}
+.desktop-faq-answer p{font-size:15px}}
+@media(max-width:700px){.practice-article .article-faq details[open]>p{font-size:14px}
+.practice-article .article-faq summary{font-size:14px;min-height:70px}}
+
+
+
+
+
+.article-faq .rating-faq-mobile{display:none}
+.article-faq .rating-faq-desktop{display:block}
+.article-faq .article-section-title{display:block;margin-bottom:24px}
+.article-faq .article-kicker{display:block;font:650 10px/1.6 Golos,sans-serif;letter-spacing:.13em;color:var(--blue);text-transform:uppercase;margin-bottom:15px}
+@media(max-width:700px){.article-faq .rating-faq-desktop{display:none}.article-faq .rating-faq-mobile{display:block}.article-faq .article-section-title{margin-bottom:20px}.article-faq .article-kicker{font-size:9px;margin-bottom:13px}}
