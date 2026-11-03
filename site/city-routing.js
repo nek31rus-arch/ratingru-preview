@@ -8,5 +8,5 @@ if(typeof document==='undefined')return;
 let config={};try{config=JSON.parse(document.querySelector('#rr-city-config')?.textContent||'{}')}catch{}
 let manual=null,remembered=null;try{manual=JSON.parse(localStorage.getItem('ratingru-city-preference')||'null');remembered=localStorage.getItem('ratingru-experiments-city')}catch{}
 const preview=config.mode==='preview'?new URLSearchParams(location.search).get('preview-city'):null;
-root.RRCityState=resolve({manual,remembered,detected:root.RR_VISITOR_CITY||preview||config.detectedCity,detectedSource:preview?'preview-server-hint':'server',fallback:config.mode==='preview'?config.previewDefault:null});
+const urlCity=new URLSearchParams(location.search).get('city'),hint=root.RR_VISITOR_CITY||preview||config.detectedCity||urlCity;root.RRCityState=resolve({manual,remembered,detected:hint,detectedSource:root.RR_VISITOR_CITY||config.detectedCity?'server':preview?'preview-server-hint':urlCity?'url':'server',fallback:config.mode==='preview'?config.previewDefault:null});
 })(typeof window!=='undefined'?window:globalThis);
