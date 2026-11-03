@@ -14,15 +14,17 @@ LAYOUTS={'layouts/'+page+'-'+kind+'.html' for page in ['home','catalog','article
 # v35 selected blog/catalogue/article and their explicit dependencies.
 PAGES|={'blog.html','guide.html','rating-moving-spb.html','rating-movers-spb.html','rating-moving-moscow.html','rating-movers-moscow.html','rating-fridge-repair-moscow.html','rating-moving-kazan.html'}
 ROOT_ASSETS|={'practice.css','practice.js','practice-data.json','practice-catalog.css','practice-ideas.js','editorial-byline.css','editorial-share.js','article-faq.css','article-faq.js','rating-recommendations.css','rating-recommendations.js','city-routing.js','city-control-variants.js','city-dialog.css','guide-ratings.json'}
+ROOT_ASSETS.add('link-policy.js')
 MEDIA|={'practice-assets/'+name for name in ['catalog-contract.svg','catalog-fridge-hero.svg','catalog-learning.svg','catalog-packing.svg','catalog-sofa.svg','catalog-van.svg','contract.svg','fridge-hero.svg','fridge-transport.svg','learning.svg','packing.svg','sofa.svg','van.svg']}
 ALLOWED=PAGES|LAYOUTS|ROOT_ASSETS|MEDIA|FONTS
 class Document(HTMLParser):
- def __init__(self,text):super().__init__();self.ids=[];self.refs=[];self.robots=[];self.in_head=False;self.feed(text)
+ def __init__(self,text):super().__init__();self.ids=[];self.refs=[];self.robots=[];self.follow_links=[];self.in_head=False;self.feed(text)
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
   if tag=='head':self.in_head=True
   if 'id'in a:self.ids.append(a['id'])
   if tag=='meta' and a.get('name','').lower()=='robots':self.robots.append((self.in_head,a.get('content')))
+  if tag in {'a','area'} and 'href' in a and 'nofollow' not in a.get('rel','').split():self.follow_links.append(a['href'])
   for key in ['href','src']:
    if key in a:self.refs.append(a[key])
   for part in a.get('srcset','').split(','):
@@ -41,6 +43,8 @@ for name in sorted(actual):
   assert not re.search(r'/Users/|127\.0\.0\.1|localhost|file://|plugin://|gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}',text),('Non-public marker',name)
  if name in PAGES|LAYOUTS:
   doc=Document(text);assert doc.robots==[(True,'noindex, nofollow')],('robots',name)
+  assert not doc.follow_links,('links missing nofollow',name,doc.follow_links)
+  assert 'link-policy.js' in doc.refs,('dynamic link policy missing',name)
   assert 'favicon.svg?v=20261026' in doc.refs and 'favicon.ico?v=20261026' in doc.refs and 'apple-touch-icon.png?v=17' in doc.refs and 'site.webmanifest' in doc.refs,('Missing brand icons',name)
   assert len(doc.ids)==len(set(doc.ids)),('duplicate IDs',name)
   for ref in doc.refs:
@@ -64,6 +68,7 @@ assert news and all(re.fullmatch(r'[a-z0-9-]+',key) for key in news)
 for key,item in news.items():
  text=item['html'];doc=Document(text)
  assert doc.robots==[(True,'noindex, nofollow')],('news robots',key)
+ assert not doc.follow_links,('news links missing nofollow',key,doc.follow_links)
  assert len(doc.ids)==len(set(doc.ids)),('news duplicate IDs',key)
  assert not re.search(r'/Users/|127\.0\.0\.1|localhost|file://|plugin://',text),('private news marker',key)
  for ref in doc.refs:
